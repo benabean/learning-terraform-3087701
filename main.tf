@@ -31,9 +31,9 @@ resource "aws_instance" "blog" {
 
 resource "aws_security_group" "blog" {
   name        = "blog"
-  description = "Allow http/s in Allow everything out"
+  description = "Allow http/s in. Allow everything out"
 
-  vpc_id      = "data.aws_vpc.default.id" 
+  vpc_id      = data.aws_vpc.default.id
 }
 
 resource "aws_security_group_rule" "blog_http_in" {
